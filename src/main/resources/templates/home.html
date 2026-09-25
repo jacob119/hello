@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Hello')}"></head>
+<body>
+<header class="topbar">
+	<span class="topbar__brand">Hello<span class="wordmark__dot">.</span></span>
+	<form th:action="@{/logout}" method="post">
+		<button class="button button--ghost" type="submit">로그아웃</button>
+	</form>
+</header>
+<main class="welcome">
+	<p class="eyebrow">signed in as <span th:text="${username}">user</span></p>
+	<h1 class="wordmark wordmark--greeting" th:text="${greeting.message}">Hello. user</h1>
+	<p class="hero__lede">오늘도 좋은 하루 보내세요.</p>
+</main>
+</body>
+</html>
